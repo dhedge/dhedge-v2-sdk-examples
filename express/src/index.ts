@@ -11,5 +11,5 @@ app.use(adminRouter)
 app.use(investRouter)
 app.use(tradeRouter)
 app.listen(process.env.PORT || 8000, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`)
+  console.log(`⚡️[server]: Server is running...`)
 })
