@@ -12,7 +12,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "@dhedge/v2-sdk": "file:./dhedge-v2-sdk-0.0.16.tgz",
+    "@dhedge/v2-sdk": "^1.0.0",
     "@sushiswap/sdk": "5.0.0-canary.7",
     "dotenv": "^10.0.0",
     "express": "^4.17.1"

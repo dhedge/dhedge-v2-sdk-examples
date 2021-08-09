@@ -2,10 +2,12 @@
 # yarn lockfile v1
 
 
-"@dhedge/v2-sdk@file:./dhedge-v2-sdk-0.0.16.tgz":
-  version "0.0.16"
-  resolved "file:./dhedge-v2-sdk-0.0.16.tgz#121f734c248d53340c71a86f517b6ae0a9e46e08"
+"@dhedge/v2-sdk@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@dhedge/v2-sdk/-/v2-sdk-1.0.0.tgz#c4d390e1f41927b4612f5cfbd81d00a7598ad772"
+  integrity sha512-W9FSlmQxKmmt9CxKb2vjgxo15le66ZVlj/AfOkqaKV0MwtQLGpRCAwvMWOmmtfoKq+vp+N+OF59cMHqGTGE+pg==
   dependencies:
+    dotenv "^10.0.0"
     ethers "^5.4.1"
 
 "@ethersproject/abi@5.4.0", "@ethersproject/abi@^5.4.0":
