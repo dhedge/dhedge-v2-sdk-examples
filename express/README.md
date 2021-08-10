@@ -6,7 +6,7 @@ API endpoints to manage and trade pools on Polygon/Sushiswap, built with Express
 
 Clone this repo, navigate to the express folder and run `yarn install` or `npm install`.
 
-Create an .env file with two paramaters. (If you don't have an Infura project, set one up for free [here](https://infura.io/).)
+Create an .env file with two paramaters. (If you don't have an Infura project, set up one for free [here](https://infura.io/).)
 
 ```
 PRIVATE_KEY=YOUR_PRIVATE_KEY
