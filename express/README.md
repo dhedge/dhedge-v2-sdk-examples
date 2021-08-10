@@ -9,12 +9,13 @@ Clone this repo, navigate to the express folder and run `yarn install` or `npm i
 Create an .env file with two paramaters. (If you don't have an Infura project, set one up for free [here](https://infura.io/).)
 
 ```
-PRIVATE_KEY=YOUR_PRIVATE_KEY INFURA_PROJECT_ID=YOUR_INFURA_PROJECT_ID
+PRIVATE_KEY=YOUR_PRIVATE_KEY
+INFURA_PROJECT_ID=YOUR_INFURA_PROJECT_ID
 ```
 
 If you already have a pool which you want to trade, change the pool address in the config.ts file.
 
-Run `yarn start:watch` or `npm run start:watch` to spin up server locally.
+Run `yarn start:watch` or `npm run start:watch` to spin up local server.
 
 ## API enpoints
 
@@ -160,8 +161,10 @@ Enable new assets/remove assets
 **Query Parameters**
 
 `from` - Asset to trade from
+
 `to` - Asset to trade into
-`share` - Percentage of balanc to
+
+`share` - Percentage of balance to trade
 
 **Url Example**
 
