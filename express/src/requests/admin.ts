@@ -37,13 +37,23 @@ adminRouter.get("/poolComposition", async (req: Request, res: Response) => {
 })
 
 adminRouter.post("/changeAssets", async (req: Request, res: Response) => {
-    try {
-      const pool = await dhedge.loadPool(poolAddress)
-      const tx = await pool.changeAssets(req.body.assets)
-      res.status(200).send({ status: "success", msg: tx.hash })
-    } catch (err) {
-      res.status(400).send({ status: "fail", msg: err })
-    }
-  })
+  try {
+    const pool = await dhedge.loadPool(poolAddress)
+    const tx = await pool.changeAssets(req.body.assets)
+    res.status(200).send({ status: "success", msg: tx.hash })
+  } catch (err) {
+    res.status(400).send({ status: "fail", msg: err })
+  }
+})
+
+adminRouter.post("/setTrader", async (req: Request, res: Response) => {
+  try {
+    const pool = await dhedge.loadPool(poolAddress)
+    const tx = await pool.setTrader(req.body.traderAccount)
+    res.status(200).send({ status: "success", msg: tx.hash })
+  } catch (err) {
+    res.status(400).send({ status: "fail", msg: err })
+  }
+})
 
 export default adminRouter
