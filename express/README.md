@@ -166,11 +166,13 @@ Enable new assets/remove assets
 
 `share` - Percentage of balance to trade
 
+`slippage` - Slippage tolerance in %
+
 **Url Example**
 
 Trade 50% of your USDC to WETH
 
-`http://localhost:8000/trade?from=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&to=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&share=50`
+`http://localhost:8000/trade?from=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174&to=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&share=50&slippage=0.5`
 
 #### Success Responses
 

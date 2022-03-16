@@ -12,10 +12,11 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "@dhedge/v2-sdk": "^1.0.0",
+    "@dhedge/v2-sdk": "^1.2.0",
     "@sushiswap/sdk": "5.0.0-canary.7",
+    "bignumber.js": "^9.0.2",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
