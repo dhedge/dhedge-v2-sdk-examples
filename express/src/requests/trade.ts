@@ -41,7 +41,7 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
 
     const txOptions = await getTxOptions()
 
-    const tx = await pool.trade(Dapp.ONEINCH, assetA, assetB, tradeAmount, +slippage, txOptions)
+    const tx = await pool.trade(Dapp.SUSHISWAP, assetA, assetB, tradeAmount, +slippage, txOptions)
 
     res.status(200).send({ status: "success", msg: tx.hash })
   } catch (err) {
