@@ -1,19 +1,19 @@
-import { Dapp, Dhedge, ethers, Network } from "@dhedge/v2-sdk";
+import { Dapp, ethers, Network } from "@dhedge/v2-sdk";
 import { Router } from "express";
-import { wallet } from "../wallet";
 
 const tradeRouter = Router();
 import { Request, Response } from "express";
 import { poolAddress } from "../config";
 import { getBalanceFromComposition } from "../utils/pool";
 import { getTxOptions } from "../utils/txOptions";
-
-const dhedge = new Dhedge(wallet, Network.POLYGON);
+import { dhedge } from "../dhedge";
 
 tradeRouter.post("/approve", async (req: Request, res: Response) => {
   try {
-    const pool = await dhedge.loadPool(poolAddress);
-    const txOptions = await getTxOptions();
+    let network = Network.POLYGON;
+    if (req.query.network) network = req.query.network as Network;
+    const pool = await dhedge(network).loadPool(poolAddress);
+    const txOptions = await getTxOptions(pool.network);
     const tx = await pool.approve(
       Dapp.ONEINCH,
       req.body.asset,
@@ -29,17 +29,19 @@ tradeRouter.post("/approve", async (req: Request, res: Response) => {
 //use get request as some
 tradeRouter.get("/trade", async (req: Request, res: Response) => {
   try {
+    let network = Network.POLYGON;
+    if (req.query.network) network = req.query.network as Network;
     const assetA = req.query.from as string;
     const assetB = req.query.to as string;
     const share = req.query.share as string;
     const slippage = req.query.slippage as string;
 
-    const pool = await dhedge.loadPool(poolAddress);
+    const pool = await dhedge(network).loadPool(poolAddress);
     const composition = await pool.getComposition();
     const balance = getBalanceFromComposition(assetA, composition);
     const tradeAmount = balance.mul(share).div(100);
 
-    const txOptions = await getTxOptions();
+    const txOptions = await getTxOptions(pool.network);
 
     const tx = await pool.trade(
       Dapp.ONEINCH,

@@ -177,3 +177,9 @@ Trade 50% of your USDC to WETH
 #### Success Responses
 
 **Code** : `200 OK`
+
+### Pools on Optimism
+
+For trading/managing pools on Optimism pass ann additional query parameter to the above endpoints
+
+`network=optimism`
