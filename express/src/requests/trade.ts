@@ -3,7 +3,6 @@ import { Router } from "express";
 
 const tradeRouter = Router();
 import { Request, Response } from "express";
-import { poolAddress } from "../config";
 import { getBalanceFromComposition } from "../utils/pool";
 import { getTxOptions } from "../utils/txOptions";
 import { dhedge } from "../dhedge";
@@ -12,6 +11,7 @@ tradeRouter.post("/approve", async (req: Request, res: Response) => {
   try {
     let network = Network.POLYGON;
     if (req.query.network) network = req.query.network as Network;
+    const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const txOptions = await getTxOptions(pool.network);
     const tx = await pool.approve(
@@ -35,6 +35,7 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
     const assetB = req.query.to as string;
     const share = req.query.share as string;
     const slippage = req.query.slippage as string;
+    const poolAddress = req.query.pool as string;
 
     const pool = await dhedge(network).loadPool(poolAddress);
     const composition = await pool.getComposition();
