@@ -15,7 +15,7 @@ tradeRouter.post("/approve", async (req: Request, res: Response) => {
     const pool = await dhedge.loadPool(poolAddress);
     const txOptions = await getTxOptions();
     const tx = await pool.approve(
-      Dapp.SUSHISWAP,
+      Dapp.ONEINCH,
       req.body.asset,
       ethers.constants.MaxUint256,
       txOptions
@@ -42,7 +42,7 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
     const txOptions = await getTxOptions();
 
     const tx = await pool.trade(
-      Dapp.SUSHISWAP,
+      Dapp.ONEINCH,
       assetA,
       assetB,
       tradeAmount,
