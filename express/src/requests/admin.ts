@@ -30,6 +30,7 @@ adminRouter.get("/poolComposition", async (req: Request, res: Response) => {
   try {
     let network = Network.POLYGON;
     if (req.query.network) network = req.query.network as Network;
+    const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const composition = await pool.getComposition();
     res.status(200).send({ status: "success", msg: composition });
@@ -42,6 +43,7 @@ adminRouter.post("/changeAssets", async (req: Request, res: Response) => {
   try {
     let network = Network.POLYGON;
     if (req.query.network) network = req.query.network as Network;
+    const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const tx = await pool.changeAssets(req.body.assets);
     res.status(200).send({ status: "success", msg: tx.hash });
@@ -54,6 +56,7 @@ adminRouter.post("/setTrader", async (req: Request, res: Response) => {
   try {
     let network = Network.POLYGON;
     if (req.query.network) network = req.query.network as Network;
+    const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const tx = await pool.setTrader(req.body.traderAccount);
     res.status(200).send({ status: "success", msg: tx.hash });

@@ -10,6 +10,7 @@ investRouter.post("/approveDeposit", async (req: Request, res: Response) => {
   try {
     let network = Network.POLYGON;
     if (req.query.network) network = req.query.network as Network;
+    const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const tx = await pool.approveDeposit(
       req.body.asset,
@@ -25,6 +26,7 @@ investRouter.post("/deposit", async (req: Request, res: Response) => {
   try {
     let network = Network.POLYGON;
     if (req.query.network) network = req.query.network as Network;
+    const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const tx = await pool.deposit(req.body.asset, req.body.amount);
     res.status(200).send({ status: "success", msg: tx.hash });
