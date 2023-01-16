@@ -14,8 +14,10 @@ tradeRouter.post("/approve", async (req: Request, res: Response) => {
     const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const txOptions = await getTxOptions(pool.network);
+    let dApp = Dapp.ONEINCH;
+    if (req.query.platform) dApp = req.query.platform as Dapp;
     const tx = await pool.approve(
-      Dapp.ONEINCH,
+      dApp,
       req.body.asset,
       ethers.constants.MaxUint256,
       txOptions
@@ -44,8 +46,10 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
 
     const txOptions = await getTxOptions(pool.network);
 
+    let dApp = Dapp.ONEINCH;
+    if (req.query.platform) dApp = req.query.platform as Dapp;
     const tx = await pool.trade(
-      Dapp.ONEINCH,
+      dApp,
       assetA,
       assetB,
       tradeAmount,

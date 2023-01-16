@@ -180,6 +180,11 @@ Trade 50% of your USDC to WETH
 
 ### Pools on Optimism
 
-For trading/managing pools on Optimism pass ann additional query parameter to the above endpoints
+For trading/managing pools on Optimism pass an additional query parameter to the above endpoints
 
 `network=optimism`
+
+For trading/approving assets on other platforms than 1Inch pass an additional query parameter
+
+e.g. Toros tokens
+`platform=toros`
