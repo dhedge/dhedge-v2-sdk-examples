@@ -15,10 +15,10 @@
   resolved "https://registry.npmjs.org/@balancer-labs/v2-deployments/-/v2-deployments-1.1.1.tgz"
   integrity sha512-emB/xHCM/njxpReZQx2BqzHXwrWF+iIwn/hSwnSOxp+P6GH0rOaboio6/+Aapj7f9tCCjqRspetX//9TumX82Q==
 
-"@dhedge/v2-sdk@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@dhedge/v2-sdk/-/v2-sdk-1.8.0.tgz#f9e62dea2a6d640eaaa6d2dcaec55d8593dd2f6e"
-  integrity sha512-9Vkl24JhzwMxNRi139bxAJQH8TTymTkXzPH8zD+VpM/i2Z2dhSw+P5mqWeYyR5O63qhF/ItwovsabFZrh+ZPLg==
+"@dhedge/v2-sdk@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@dhedge/v2-sdk/-/v2-sdk-1.8.1.tgz#900641fb44af5f9cf73db303d7359ba02d87beed"
+  integrity sha512-YFI07ne4AEzjEmKkO5pXMPqHuMudCxZS58lHPlV4kQD5Ld6/r4tlru84XqnVnNC+gguy6ITnt27AliqWQUVG6A==
   dependencies:
     "@balancer-labs/sor" "^2.0.0-beta.3"
     "@ethersproject/bignumber" "^5.5.0"
