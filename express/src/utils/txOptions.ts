@@ -7,7 +7,7 @@ export const getTxOptions = async (network: Network): Promise<any> => {
   if (network === Network.POLYGON) {
     const result = await axios("https://gasstation-mainnet.matic.network/v2");
     return {
-      gasLimit: "3000000",
+      gasLimit: "5000000",
       maxPriorityFeePerGas: new BigNumber(result.data.fast.maxPriorityFee)
         .shiftedBy(9)
         .toFixed(0),
@@ -16,6 +16,6 @@ export const getTxOptions = async (network: Network): Promise<any> => {
         .toFixed(0),
     };
   } else {
-    return { gasLimit: "3000000" };
+    return { gasLimit: "5000000" };
   }
 };
