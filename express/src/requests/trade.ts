@@ -36,13 +36,22 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
     const assetA = req.query.from as string;
     const assetB = req.query.to as string;
     const share = req.query.share as string;
+    const amount = req.query.amount as string;
     const slippage = req.query.slippage as string;
     const poolAddress = req.query.pool as string;
 
     const pool = await dhedge(network).loadPool(poolAddress);
-    const composition = await pool.getComposition();
-    const balance = getBalanceFromComposition(assetA, composition);
-    const tradeAmount = balance.mul(share).div(100);
+
+    let tradeAmount: ethers.BigNumber;
+    if (share) {
+      const composition = await pool.getComposition();
+      const balance = getBalanceFromComposition(assetA, composition);
+      tradeAmount = balance.mul(share).div(100);
+    } else if (amount) {
+      tradeAmount = ethers.BigNumber.from(amount);
+    } else {
+      throw "share or amount missing";
+    }
 
     const txOptions = await getTxOptions(pool.network);
 
