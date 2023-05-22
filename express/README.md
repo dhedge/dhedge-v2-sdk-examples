@@ -168,6 +168,10 @@ Enable new assets/remove assets
 
 `slippage` - Slippage tolerance in %
 
+`platform` - Platform like "1inch" or "ONEINCH = "1inch" or "uniswapV3"
+
+`feeAmount` - Only for UniV3 trades (default 500 (0.05%))
+
 **Url Example**
 
 Trade 50% of your USDC to WETH

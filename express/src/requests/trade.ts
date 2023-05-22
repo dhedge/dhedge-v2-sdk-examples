@@ -45,7 +45,6 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
     let tradeAmount: ethers.BigNumber;
     const composition = await pool.getComposition();
     const balance = getBalanceFromComposition(assetA, composition);
-
     if (share) {
       tradeAmount = balance.mul(share).div(100);
     } else if (amount) {
@@ -58,15 +57,30 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
     const txOptions = await getTxOptions(pool.network);
 
     let dApp = Dapp.ONEINCH;
+    let feeAmount = 500;
+    if (req.query.feeAmount)
+      feeAmount = req.query.feeAmount as unknown as number;
     if (req.query.platform) dApp = req.query.platform as Dapp;
-    const tx = await pool.trade(
-      dApp,
-      assetA,
-      assetB,
-      tradeAmount,
-      +slippage,
-      txOptions
-    );
+    let tx;
+    if (dApp === Dapp.UNISWAPV3) {
+      tx = await pool.tradeUniswapV3(
+        assetA,
+        assetB,
+        tradeAmount,
+        feeAmount,
+        +slippage,
+        txOptions
+      );
+    } else {
+      tx = await pool.trade(
+        dApp,
+        assetA,
+        assetB,
+        tradeAmount,
+        +slippage,
+        txOptions
+      );
+    }
 
     res.status(200).send({ status: "success", msg: tx.hash });
   } catch (err) {
