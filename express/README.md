@@ -8,9 +8,13 @@ Clone this repo, navigate to the express folder and run `yarn install` or `npm i
 
 Create an .env file with two paramaters. (If you don't have an Infura project, set up one for free [here](https://infura.io/).)
 
+If you want to use 1Inch to trade pool assets you need to apply for an API key at [1Inch Dev Portal](https://docs.1inch.io/docs/aggregation-protocol/introduction).
+Then you need to set the API key in the .env file.
+
 ```
 PRIVATE_KEY=YOUR_PRIVATE_KEY
 INFURA_PROJECT_ID=YOUR_INFURA_PROJECT_ID
+ONEINCH_API_KEY=YOUR_API_KEY_FROM_1INCH
 ```
 
 If you already have a pool which you want to trade, change the pool address in the config.ts file.
