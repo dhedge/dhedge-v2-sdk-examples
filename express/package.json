@@ -12,7 +12,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "@dhedge/v2-sdk": "^1.9.4",
+    "@dhedge/v2-sdk": "^1.9.6",
     "@sushiswap/sdk": "5.0.0-canary.7",
     "bignumber.js": "^9.0.2",
     "dotenv": "^10.0.0",
