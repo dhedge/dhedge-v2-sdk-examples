@@ -14,7 +14,7 @@ tradeRouter.post("/approve", async (req: Request, res: Response) => {
     const poolAddress = req.query.pool as string;
     const pool = await dhedge(network).loadPool(poolAddress);
     const txOptions = await getTxOptions(pool.network);
-    let dApp = Dapp.ONEINCH;
+    let dApp = Dapp.1inch;
     if (req.query.platform) dApp = req.query.platform as Dapp;
     const tx = await pool.approve(
       dApp,
@@ -56,7 +56,7 @@ tradeRouter.get("/trade", async (req: Request, res: Response) => {
 
     const txOptions = await getTxOptions(pool.network);
 
-    let dApp = Dapp.ONEINCH;
+    let dApp = Dapp.1inch;
     let feeAmount = 500;
     if (req.query.feeAmount)
       feeAmount = req.query.feeAmount as unknown as number;
