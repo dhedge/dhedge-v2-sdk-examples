@@ -22,16 +22,19 @@ If you already have a pool which you want to trade, change the pool address in t
 Run `yarn start:watch` or `npm run start:watch` to spin up local server.
 
 ## dHEDGE Setup
-1. Establish 2 Polygon Mainnet accounts within any of the acceptable wallet providers that can connect to dHEDGE dApp: 
+1. Establish 2 Polygon Mainnet accounts within any of the acceptable wallet providers that can connect to dHEDGE dApp:
+   
 		1. Manager Wallet
 		2. Trader Wallet
 
-2. Fund BOTH wallets with MATIC on the Polygon Mainnet:
-  Deposit Polygon mainnet MATIC to both wallets to fund transaction fees.
-  Go to Polygon bridge and bridge Ethereum mainnet MATIC to the Polygon Mainnet if necessary.
-  MATIC Bridge: https://wallet.Polygon.technology/bridge.
+3. Fund both wallets with MATIC on the Polygon Mainnet:
+   
+  	Deposit Polygon mainnet MATIC to both wallets to fund transaction fees.
+  	Go to Polygon bridge and bridge Ethereum mainnet MATIC to the Polygon Mainnet if necessary.
 
-3. Create a vault on the Polygon Mainnet in the dHEDGE web app https://app.dhedge.org/ while connected with the Manager Wallet (you need MATIC on Polygon Mainnet in the Manager Wallet for gas to pay for this transaction of creating a vault).
+   	MATIC Bridge: https://wallet.Polygon.technology/bridge.
+
+5. Create a vault on the Polygon Mainnet in the dHEDGE web app https://app.dhedge.org/ while connected with the Manager Wallet (you need MATIC on Polygon Mainnet in the Manager Wallet for gas to pay for this transaction of creating a vault).
 
   After creating the vault, and still connected to the dHEDGE app, use the ‘Set Trader’ button to set the Trader to your Trader Account wallet address.
 
