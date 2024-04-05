@@ -23,9 +23,8 @@ Run `yarn start:watch` or `npm run start:watch` to spin up local server.
 
 ## dHEDGE Setup
 1. Establish 2 Polygon Mainnet accounts within any of the acceptable wallet providers that can connect to dHEDGE dApp: 
-
-  1. Manager Wallet
-  2. Trader Wallet
+		1. Manager Wallet
+		2. Trader Wallet
 
 2. Fund BOTH wallets with MATIC on the Polygon Mainnet:
   Deposit Polygon mainnet MATIC to both wallets to fund transaction fees.
