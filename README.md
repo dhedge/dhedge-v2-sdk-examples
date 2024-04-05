@@ -2,20 +2,24 @@
 
 Example code using the [dHedge V2 SDK](https://www.npmjs.com/package/@dhedge/v2-sdk).
 
-## Initial Setup 
+## Initial setup
 
-Clone this repo, navigate to the 'express' folder and run 'yarn install' or 'npm install'.
+Clone this repo, navigate to the express folder and run `yarn install` or `npm install`.
 
-Create an .env file in the directory with two paramaters. (If you don't have an Infura project, set up one for free [here](https://app.infura.io/register).)
+Create an .env file with two paramaters. (If you don't have an Infura project, set up one for free [here](https://infura.io/).)
 
-If you want to use 1Inch to trade pool assets you need to apply for an API key at 1Inch Dev Portal. Then you need to set the API key in the .env file.
+If you want to use 1Inch to trade pool assets you need to apply for an API key at [1Inch Dev Portal](https://docs.1inch.io/docs/aggregation-protocol/introduction).
+Then you need to set the API key in the .env file.
 
+```
 PRIVATE_KEY=YOUR_PRIVATE_KEY
 INFURA_PROJECT_ID=YOUR_INFURA_PROJECT_ID
 ONEINCH_API_KEY=YOUR_API_KEY_FROM_1INCH
+```
 
 If you already have a pool which you want to trade, change the pool address in the config.ts file.
-Run 'yarn start:watch' or 'npm run start:watch' to spin up local server.
+
+Run `yarn start:watch` or `npm run start:watch` to spin up local server.
 
 ## dHEDGE Setup
 1. Establish 2 Polygon Mainnet accounts within any of the acceptable wallet providers that can connect to dHEDGE dApp: 
